@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SUKOON by Neha — Calm. Strength. Balance.</title>
+  <meta name="description" content="SUKOON by Neha — boutique wellness classes designed for calm strength, balance, and warm community." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --sage:#A8C3B5;
+      --teal:#1F4B4E;
+      --sand:#F3E8DA;
+      --blush:#D98C75;
+      --offwhite:#FBFAF7;
+      --charcoal:#2C2C2C;
+
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(31,75,78,0.12);
+      --shadow2: 0 8px 20px rgba(44,44,44,0.08);
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--charcoal);
+      background: radial-gradient(1200px 600px at 15% 10%, rgba(168,195,181,0.35), transparent 60%),
+                  radial-gradient(900px 500px at 85% 15%, rgba(217,140,117,0.22), transparent 55%),
+                  linear-gradient(180deg, var(--offwhite), #ffffff);
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Top nav */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(251,250,247,0.72);
+      border-bottom: 1px solid rgba(31,75,78,0.10);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, var(--sage), var(--sand));
+      box-shadow: var(--shadow2);
+      position:relative;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:9px;
+      border-radius:12px;
+      border:2px solid rgba(31,75,78,0.35);
+    }
+    .brand span{
+      font-family:"Playfair Display", serif;
+      font-size:18px;
+      color:var(--teal);
+    }
+    nav a{
+      margin-left:18px;
+      font-size:14px;
+      color:rgba(44,44,44,0.85);
+    }
+    nav a:hover{color:var(--teal)}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background: linear-gradient(135deg, var(--teal), #14373A);
+      color:white;
+      box-shadow: var(--shadow);
+      font-weight:600;
+      font-size:14px;
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .cta small{opacity:0.85; font-weight:400}
+
+    /* Hero */
+    .hero{padding:58px 0 26px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.72);
+      box-shadow: var(--shadow2);
+      border: 1px solid rgba(31,75,78,0.10);
+      overflow:hidden;
+    }
+    .hero-main{padding:34px}
+    h1{
+      font-family:"Playfair Display", serif;
+      font-size:44px;
+      line-height:1.08;
+      margin:0 0 14px;
+      color:var(--teal);
+    }
+    .sub{
+      font-size:16px;
+      margin:0 0 18px;
+      color:rgba(44,44,44,0.80);
+      max-width:56ch;
+    }
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 22px}
+    .badge{
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(168,195,181,0.22);
+      border: 1px solid rgba(31,75,78,0.14);
+      color: rgba(31,75,78,0.95);
+    }
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid transparent;
+      transition: 0.18s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--blush), #C97D6A);
+      color:white;
+      box-shadow: var(--shadow2);
+    }
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{
+      background: rgba(243,232,218,0.55);
+      border-color: rgba(217,140,117,0.35);
+      color: var(--teal);
+    }
+    .btn-ghost:hover{background: rgba(243,232,218,0.75)}
+
+    /* Hero side */
+    .hero-side{padding:22px}
+    .side-top{
+      padding:18px;
+      border-radius:16px;
+      background: linear-gradient(135deg, rgba(168,195,181,0.35), rgba(243,232,218,0.55));
+      border:1px solid rgba(31,75,78,0.10);
+      margin-bottom:14px;
+    }
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:rgba(31,75,78,0.75);
+      margin-bottom:10px;
+    }
+    .side-title{
+      font-family:"Playfair Display", serif;
+      font-size:20px;
+      margin:0 0 8px;
+      color:var(--teal);
+    }
+    .side-text{margin:0; font-size:14px; color:rgba(44,44,44,0.78)}
+    .qr{
+      display:flex; gap:14px; align-items:center;
+      padding:16px;
+      border-radius:16px;
+      border:1px solid rgba(31,75,78,0.12);
+      background: rgba(255,255,255,0.72);
+    }
+    .qr img{
+      width:96px; height:96px; border-radius:12px;
+      border:1px solid rgba(31,75,78,0.12);
+      background:white;
+    }
+    .qr strong{color:var(--teal)}
+    .qr p{margin:4px 0 0; font-size:13px; color:rgba(44,44,44,0.75)}
+
+    /* Sections */
+    section{padding:52px 0}
+    .section-title{
+      font-family:"Playfair Display", serif;
+      font-size:28px;
+      margin:0 0 10px;
+      color:var(--teal);
+    }
+    .section-sub{margin:0 0 22px; color:rgba(44,44,44,0.78); max-width:78ch}
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+    .mini{
+      padding:20px;
+    }
+    .mini h3{margin:0 0 6px; color:var(--teal)}
+    .mini p{margin:0; font-size:14px; color:rgba(44,44,44,0.78)}
+    .pill{
+      display:inline-block;
+      margin-top:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(217,140,117,0.16);
+      border:1px solid rgba(217,140,117,0.25);
+      color: rgba(31,75,78,0.95);
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* Trainers */
+    .trainer{
+      padding:22px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .avatar{
+      width:58px; height:58px;
+      border-radius:16px;
+      background: linear-gradient(135deg, rgba(168,195,181,0.7), rgba(243,232,218,0.9));
+      border:1px solid rgba(31,75,78,0.12);
+      box-shadow: var(--shadow2);
+      flex:0 0 auto;
+      position:relative;
+    }
+    .avatar:after{
+      content:"";
+      position:absolute;
+      inset:13px;
+      border-radius:14px;
+      border:2px solid rgba(31,75,78,0.25);
+    }
+    .trainer h3{margin:0 0 4px; color:var(--teal)}
+    .trainer .role{font-size:13px; color:rgba(31,75,78,0.78); font-weight:600}
+    .trainer p{margin:10px 0 0; font-size:14px; color:rgba(44,44,44,0.78)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(168,195,181,0.20);
+      border: 1px solid rgba(31,75,78,0.12);
+      color: rgba(31,75,78,0.92);
+    }
+
+    /* Testimonials */
+    .quote{
+      padding:22px;
+    }
+    .quote p{margin:0; font-size:15px; color:rgba(44,44,44,0.80)}
+    .quote .who{margin-top:12px; font-weight:700; color:var(--teal)}
+    .quote .who span{font-weight:500; color:rgba(44,44,44,0.70)}
+
+    /* Contact */
+    .contact{
+      padding:26px;
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .contact ul{margin:12px 0 0; padding:0; list-style:none}
+    .contact li{margin:8px 0; color:rgba(44,44,44,0.82)}
+    .contact a.link{color:var(--teal); font-weight:700}
+    .form{
+      padding:18px;
+      border-radius:16px;
+      background: rgba(243,232,218,0.55);
+      border: 1px solid rgba(217,140,117,0.20);
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(31,75,78,0.14);
+      outline:none;
+      margin:8px 0;
+      font-family:inherit;
+      background: rgba(255,255,255,0.75);
+    }
+    textarea{min-height:110px; resize:vertical}
+    .footer{
+      padding:26px 0 44px;
+      color:rgba(44,44,44,0.70);
+      font-size:13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .grid-3{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <span>SUKOON by Neha</span>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="cta" href="#register" aria-label="Register for classes">
+      Register <small>→</small>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="wrap hero" id="top">
+    <div class="hero-grid">
+      <div class="card hero-main">
+        <div class="kicker">CALM • WARM • PROFESSIONAL</div>
+        <h1>Find your SUKOON —<br/> calm strength & balance.</h1>
+        <p class="sub">
+          SUKOON by Neha is a boutique wellness space where mindful movement meets
+          compassionate coaching. Classes are designed to help you feel lighter, stronger,
+          and more centered — inside and out.
+        </p>
+
+        <div class="badges">
+          <div class="badge">Beginner-friendly</div>
+          <div class="badge">Small group attention</div>
+          <div class="badge">Mind–body approach</div>
+          <div class="badge">Warm community vibe</div>
+        </div>
+
+        <div class="actions" id="register">
+          <a class="btn btn-primary" id="registerBtn" href="#" target="_blank" rel="noopener">
+            Register for Classes
+          </a>
+          <a class="btn btn-ghost" href="#about">Explore the Studio</a>
+        </div>
+      </div>
+
+      <div class="card hero-side">
+        <div class="side-top">
+          <div class="kicker">NEXT STEP</div>
+          <h2 class="side-title">Scan to register</h2>
+          <p class="side-text">Use the QR code to open the class registration page on your phone.</p>
+        </div>
+
+        <div class="qr">
+          <img id="qrImg" alt="QR code to register for classes" src="" />
+          <div>
+            <strong>Registration QR</strong>
+            <p id="qrHint">Link will load after you add your registration URL below.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; font-size:13px; color:rgba(44,44,44,0.72)">
+          <strong style="color:var(--teal)">Tip:</strong> Replace the sample URL in the script
+          with your real registration link (Google Form, Calendly, Mindbody, etc.).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">About SUKOON</h2>
+      <p class="section-sub">
+        “Sukoon” means peace — and that’s the feeling we build in every session. Our classes combine
+        breath, mobility, strength, and mindful flow so you can move with confidence and live with ease.
+      </p>
+
+      <div class="grid-3">
+        <div class="card mini">
+          <h3>Our Approach</h3>
+          <p>Gentle progression, safe alignment, and calm energy — with modifications for every level.</p>
+          <span class="pill">Calm strength</span>
+        </div>
+        <div class="card mini">
+          <h3>What You’ll Feel</h3>
+          <p>More grounded, flexible, energized — and supported by a welcoming, warm community.</p>
+          <span class="pill">Warm support</span>
+        </div>
+        <div class="card mini">
+          <h3>Who It’s For</h3>
+          <p>Busy professionals, beginners, returners, and anyone who wants mindful movement that fits real life.</p>
+          <span class="pill">All levels</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section id="trainers">
+    <div class="wrap">
+      <h2 class="section-title">Trainers</h2>
+      <p class="section-sub">
+        Meet our team — compassionate coaches focused on safe movement, confidence, and consistency.
+      </p>
+
+      <div class="grid-3">
+        <div class="card trainer">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h3>Neha</h3>
+            <div class="role">Founder • Lead Trainer</div>
+            <p>
+              Neha brings a calm, nurturing style that balances strength and softness.
+              Her sessions focus on breath-led movement, alignment, and building sustainable habits.
+            </p>
+            <div class="tags">
+              <span class="tag">Mindful Flow</span>
+              <span class="tag">Mobility</span>
+              <span class="tag">Strength Basics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card trainer">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h3>Trainer 2 (Name)</h3>
+            <div class="role">Yoga • Stretch & Restore</div>
+            <p>
+              Known for deeply relaxing sessions, Trainer 2 supports flexibility, posture,
+              and stress relief through gentle sequencing and guided breathwork.
+            </p>
+            <div class="tags">
+              <span class="tag">Yoga</span>
+              <span class="tag">Restore</span>
+              <span class="tag">Breathwork</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card trainer">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h3>Trainer 3 (Name)</h3>
+            <div class="role">Strength • Conditioning</div>
+            <p>
+              Trainer 3 brings warm motivation and smart programming. Expect a supportive,
+              form-first approach that builds strength without overwhelm.
+            </p>
+            <div class="tags">
+              <span class="tag">Strength</span>
+              <span class="tag">Conditioning</span>
+              <span class="tag">Beginner Friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:14px; color:rgba(44,44,44,0.70); font-size:13px">
+        *Replace Trainer 2/3 placeholder names & bios with your real team info.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="section-sub">
+        A warm space, calm coaching, and steady progress — here’s what members share most often.
+      </p>
+
+      <div class="grid-3">
+        <div class="card quote">
+          <p>
+            “I joined to reduce stress, but I stayed because SUKOON feels like therapy through movement.
+            I’m stronger, my posture is better, and I leave every class calm.”
+          </p>
+          <div class="who">Aanya <span>• Member</span></div>
+        </div>
+        <div class="card quote">
+          <p>
+            “Neha explains everything so clearly and never rushes. The vibe is welcoming and warm —
+            even as a beginner I felt safe and supported.”
+          </p>
+          <div class="who">Rohan <span>• Beginner</span></div>
+        </div>
+        <div class="card quote">
+          <p>
+            “The small group attention is a game-changer. It’s professional, peaceful, and the results
+            are real — less stiffness, more energy.”
+          </p>
+          <div class="who">Meera <span>• Regular</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">
+        Reach out for class timings, location details, or collaborations. We’d love to hear from you.
+      </p>
+
+      <div class="card contact">
+        <div>
+          <h3 style="margin:0; color:var(--teal)">Contact Details</h3>
+          <ul>
+            <li><strong>Email:</strong> <a class="link" href="mailto:hello@sukoonbyneha.com">hello@sukoonbyneha.com</a></li>
+            <li><strong>Phone/WhatsApp:</strong> <a class="link" href="tel:+10000000000">+1 (000) 000‑0000</a></li>
+            <li><strong>Instagram:</strong> <a class="link" href="#" target="_blank" rel="noopener">@sukoonbyneha</a></li>
+            <li><strong>Location:</strong> Studio Address (City)</li>
+          </ul>
+
+          <div style="margin-top:16px; padding:14px; border-radius:16px; background:rgba(168,195,181,0.18); border:1px solid rgba(31,75,78,0.10)">
+            <strong style="color:var(--teal)">Registration QR</strong>
+            <p style="margin:6px 0 0; color:rgba(44,44,44,0.78); font-size:14px">
+              Scan the QR in the hero section or click the “Register for Classes” button above.
+            </p>
+          </div>
+        </div>
+
+        <div class="form">
+          <h3 style="margin:0 0 10px; color:var(--teal)">Quick Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Thanks! Please connect via email/WhatsApp for now.');">
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Your email" required />
+            <textarea placeholder="Your message"></textarea>
+            <button class="btn btn-primary" type="submit" style="width:100%; margin-top:10px">
+              Send Message
+            </button>
+          </form>
+          <p style="margin:10px 0 0; font-size:12px; color:rgba(44,44,44,0.70)">
+            (This demo form doesn’t send emails yet — it’s a placeholder.)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="wrap" style="padding:0">
+          © <span id="year"></span> SUKOON by Neha • Calm. Warm. Professional.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // ✅ 1) Paste your real registration link here:
+  const REGISTRATION_URL = "https://example.com/register";
+
+  // ✅ 2) QR code generator (no libraries needed):
+  // Uses a public QR image endpoint. If you prefer fully offline QR generation,
+  // tell me your hosting plan and I’ll adjust the code accordingly.
+  const qrSrc = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" + encodeURIComponent(REGISTRATION_URL);
+
+  document.getElementById("qrImg").src = qrSrc;
+  document.getElementById("registerBtn").href = REGISTRATION_URL;
+  document.getElementById("qrHint").textContent = REGISTRATION_URL;
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
